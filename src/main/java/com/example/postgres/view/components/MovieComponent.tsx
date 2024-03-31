@@ -73,7 +73,7 @@ function MovieComponent({ movies }: { movies: Movie[] }) {
 				className="flex flex-col w-full gap-8 p-4 border-2 border-slate-700"
 			>
 				<div className="flex flex-col">
-					<div className="flex justify-between">
+					<div className="flex justify-between items-end">
 						<div className="text-3xl font-bold">{movie.title}</div>
 						<div className=" italic">{movie.genre}</div>
 					</div>
@@ -96,7 +96,7 @@ function MovieComponent({ movies }: { movies: Movie[] }) {
 							) / movie.reviews.length || "Unrated"}
 						</div>
 					</div>
-					<div className="flex flex-col gap-2">{reviewElements}</div>
+					<div className="flex flex-col gap-2 overflow-auto h-60">{reviewElements}</div>
 					<div className="font-bold text-xl">Add a rating</div>
 					<form
 						onSubmit={SubmitReview}
@@ -137,7 +137,7 @@ function MovieComponent({ movies }: { movies: Movie[] }) {
 	});
 
 	return (
-		<div className="items-start w-full justify-center flex flex-col gap-8">
+		<div className="w-full justify-center flex flex-col gap-8">
 			{movieElements}
 		</div>
 	);
